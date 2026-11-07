@@ -1,0 +1,9 @@
+{
+  "name": "aiProxy",
+  "version": "1.0.0",
+  "description": "非遗小程序 AI 代理云函数（转发 DeepSeek 对话与识图）",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "~2.6.3"
+  }
+}
