@@ -1,0 +1,15 @@
+.page {background: var(--grad-bg);
+ padding-bottom: 30rpx; }
+.shop-header { background: linear-gradient(135deg,var(--c-primary-dark),var(--c-primary)); padding: 40rpx 24rpx; display: flex; align-items: center; color: #fff; }
+.s-avatar { width: 120rpx; height: 120rpx; border-radius: 16rpx; background: rgba(255,255,255,0.3); display: flex; align-items: center; justify-content: center; font-size: 50rpx; font-weight: bold; margin-right: 20rpx; }
+.s-name { font-size: 34rpx; font-weight: bold; display: block; }
+.s-region { font-size: 24rpx; opacity: 0.9; margin-top: 6rpx; display: block; }
+.s-intro { font-size: 24rpx; opacity: 0.85; margin-top: 6rpx; display: block; }
+.s-stats { background: #fff; padding: 20rpx 24rpx; justify-content: space-around; font-size: 26rpx; color: #666; }
+
+.product-grid { padding: 20rpx 24rpx; display: flex; flex-wrap: wrap; justify-content: space-between; }
+.p-card { width: 340rpx; background: #fff; border-radius: 16rpx; margin-bottom: 20rpx; overflow: hidden; }
+.p-cover { width: 340rpx; height: 340rpx; }
+.p-info { padding: 16rpx; }
+.p-name { font-size: 26rpx; height: 70rpx; line-height: 1.4; }
+.price { color: var(--c-primary-dark); font-weight: bold; font-size: 30rpx; }

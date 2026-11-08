@@ -1,0 +1,24 @@
+.page {background: var(--grad-bg);
+ padding: 20rpx 24rpx 140rpx; }
+.card { background: #fff; border-radius: 16rpx; padding: 24rpx; margin-bottom: 20rpx; }
+.user-row { display: flex; align-items: center; margin-bottom: 16rpx; }
+.avatar { width: 70rpx; height: 70rpx; border-radius: 50%; background: linear-gradient(135deg,var(--c-primary-dark),var(--c-primary)); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 30rpx; font-weight: bold; margin-right: 14rpx; }
+.u-name { font-size: 28rpx; font-weight: bold; display: block; }
+.u-time { font-size: 22rpx; color: #999; display: block; }
+.t-title { font-size: 34rpx; font-weight: bold; display: block; }
+.t-content { font-size: 28rpx; color: #555; line-height: 1.8; margin-top: 14rpx; display: block; }
+.t-stats { margin-top: 24rpx; padding-top: 20rpx; border-top: 1rpx solid #f5f5f5; font-size: 24rpx; color: #999; }
+.actions { display: flex; gap: 24rpx; }
+.act { color: #666; }
+.del-act { color: #C0392B; }
+
+.comment { display: flex; padding: 16rpx 0; border-bottom: 1rpx solid #f5f5f5; }
+.comment:last-child { border-bottom: none; }
+.c-avatar { width: 56rpx; height: 56rpx; border-radius: 50%; background: #f5f5f5; display: flex; align-items: center; justify-content: center; font-size: 24rpx; margin-right: 14rpx; flex-shrink: 0; }
+.c-name { font-size: 26rpx; font-weight: bold; display: block; }
+.c-content { font-size: 26rpx; color: #555; display: block; margin-top: 4rpx; }
+.c-time { font-size: 20rpx; color: #999; display: block; margin-top: 4rpx; }
+
+.bottom-bar { position: fixed; bottom: 0; left: 0; right: 0; background: #fff; padding: 16rpx 24rpx; display: flex; gap: 16rpx; border-top: 1rpx solid #f2f2f2; }
+.comment-input { flex: 1; background: #f5f5f5; border-radius: 40rpx; height: 72rpx; padding: 0 24rpx; font-size: 26rpx; }
+.send-btn { padding: 0 30rpx; }

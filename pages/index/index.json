@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "非遗传承",
+  "usingComponents": {
+    "cover": "/components/cover/cover"
+  }
+}

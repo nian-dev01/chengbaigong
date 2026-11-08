@@ -1,0 +1,49 @@
+.page { background: var(--grad-bg); min-height: 100vh; }
+.search { padding: 20rpx 24rpx; background: var(--c-moss); }
+.search-input { background: var(--c-card); border-radius: 40rpx; height: 72rpx; padding: 0 30rpx; font-size: 28rpx; color: var(--c-text); }
+.tabs { background: var(--c-moss); display: flex; padding: 0 24rpx 20rpx; }
+.tab { padding: 10rpx 30rpx; font-size: 28rpx; color: var(--c-text-soft); position: relative; transition: color 0.2s ease; }
+.tab.active { color: var(--c-primary-dark); font-weight: bold; }
+.tab.active::after { content:''; position:absolute; bottom:0; left:50%; transform:translateX(-50%); width:40rpx; height:4rpx; background:var(--grad-primary); border-radius:2rpx; }
+
+.list { padding: 20rpx 24rpx; }
+.shop-card {
+  background: var(--c-card);
+  border-radius: 24rpx 16rpx 24rpx 16rpx;
+  padding: 24rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  align-items: center;
+  box-shadow: var(--shadow-card);
+  border: 1rpx solid var(--c-fresh);
+  transition: transform 0.15s ease;
+}
+.shop-card:active { transform: scale(0.98); }
+.s-avatar {
+  width: 100rpx; height: 100rpx; border-radius: 20rpx 12rpx 20rpx 12rpx;
+  background: var(--grad-primary); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 44rpx; font-weight: bold; margin-right: 20rpx;
+}
+.s-name { font-size: 30rpx; font-weight: bold; display: block; color: var(--c-text); }
+.s-region { font-size: 24rpx; color: var(--c-text-light); margin-top: 6rpx; display: block; }
+.s-meta { display: flex; gap: 20rpx; margin-top: 10rpx; font-size: 22rpx; color: var(--c-text-soft); }
+.arrow { color: var(--c-text-light); font-size: 40rpx; }
+
+.product-grid { padding: 20rpx 24rpx; display: flex; flex-wrap: wrap; justify-content: space-between; }
+.p-card {
+  width: 340rpx;
+  background: var(--c-card);
+  border-radius: 24rpx 16rpx 24rpx 16rpx;
+  margin-bottom: 20rpx;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.15s ease;
+}
+.p-card:active { transform: scale(0.98); }
+.p-cover { width: 340rpx; height: 340rpx; }
+.p-info { padding: 16rpx; }
+.p-name { font-size: 26rpx; color: var(--c-text); height: 70rpx; line-height: 1.4; }
+.p-bottom { margin-top: 10rpx; }
+.price { font-size: 32rpx; color: var(--c-primary-dark); font-weight: bold; }
+.sales { font-size: 22rpx; color: var(--c-text-light); }

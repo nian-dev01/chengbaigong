@@ -1,0 +1,339 @@
+/* consult.wxss - AI 智能客服聊天页 v3 */
+
+.chat-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--grad-bg);
+}
+
+/* === 头部 === */
+.chat-header {
+  background: var(--grad-primary);
+  padding: 24rpx 28rpx;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  padding-top: calc(env(safe-area-inset-top) + 24rpx);
+}
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 18rpx;
+  position: relative;
+  z-index: 1;
+}
+.ai-avatar {
+  width: 88rpx;
+  height: 88rpx;
+  background: rgba(255,255,255,0.25);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 44rpx;
+  border: 2rpx solid rgba(255,255,255,0.4);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: block;
+}
+.ai-info {
+  display: flex;
+  flex-direction: column;
+}
+.ai-name {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 1rpx;
+}
+.ai-status {
+  font-size: 22rpx;
+  color: rgba(255,255,255,0.85);
+  margin-top: 4rpx;
+}
+.header-deco {
+  position: absolute;
+  width: 180rpx;
+  height: 180rpx;
+  background: rgba(255,255,255,0.12);
+  border-radius: 50%;
+  top: -60rpx;
+  right: -40rpx;
+}
+
+/* === 消息区 === */
+.chat-box {
+  flex: 1;
+  min-height: 0;
+  padding: 28rpx 24rpx;
+  box-sizing: border-box;
+}
+
+/* 消息行 */
+.msg-row {
+  display: flex;
+  margin-bottom: 28rpx;
+  align-items: flex-start;
+  gap: 14rpx;
+}
+.ai-row {
+  justify-content: flex-start;
+}
+.user-row {
+  justify-content: flex-end;
+}
+
+/* 头像 */
+.msg-avatar {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32rpx;
+  flex-shrink: 0;
+  box-shadow: 0 2rpx 10rpx rgba(61,81,72,0.1);
+}
+.ai-avatar-mini {
+  background: linear-gradient(135deg, #B8DCCF, #91CBB8);
+}
+.user-avatar {
+  background: var(--grad-warm);
+  color: #fff;
+  font-size: 24rpx;
+  font-weight: bold;
+}
+
+/* 气泡 */
+.msg-bubble {
+  max-width: 72%;
+  padding: 20rpx 28rpx;
+  border-radius: 24rpx 16rpx 24rpx 8rpx;
+  position: relative;
+  word-break: break-all;
+}
+.ai-bubble {
+  background: #fff;
+  color: var(--c-text);
+  box-shadow: var(--shadow-card);
+}
+.user-bubble {
+  background: var(--grad-primary);
+  color: #fff;
+  border-radius: 16rpx 24rpx 8rpx 24rpx;
+  box-shadow: 0 4rpx 16rpx rgba(145, 203, 184, 0.25);
+}
+.bubble-text {
+  font-size: 28rpx;
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+.user-bubble .bubble-text {
+  color: #fff;
+}
+
+/* 气泡内打字指示器 */
+.typing-dots {
+  display: flex;
+  gap: 6rpx;
+  margin-top: 10rpx;
+  align-items: center;
+}
+.dot {
+  width: 10rpx;
+  height: 10rpx;
+  background: var(--c-primary);
+  border-radius: 50%;
+  animation: dotBounce 1.2s infinite ease-in-out;
+  animation-delay: 0s;
+}
+.dot-2 { animation-delay: 0.2s; }
+.dot-3 { animation-delay: 0.4s; }
+
+@keyframes dotBounce {
+  0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+  40% { transform: scale(1); opacity: 1; }
+}
+
+/* 整体输入指示器 */
+.typing-indicator {
+  display: flex;
+  align-items: center;
+  gap: 14rpx;
+  padding: 20rpx 0;
+}
+.typing-text {
+  font-size: 24rpx;
+  color: var(--c-text-light);
+}
+
+/* === 快捷提问 === */
+.quick-wrap {
+  padding: 16rpx 24rpx;
+  white-space: nowrap;
+  background: transparent;
+  flex-shrink: 0;
+}
+.quick-item {
+  display: inline-block;
+  padding: 14rpx 28rpx;
+  background: #fff;
+  border: 2rpx solid var(--c-moss);
+  border-radius: 40rpx;
+  font-size: 24rpx;
+  color: var(--c-primary-dark);
+  margin-right: 16rpx;
+  box-shadow: 0 2rpx 8rpx rgba(61,81,72,0.05);
+}
+
+/* === 输入栏 === */
+.input-bar {
+  display: flex;
+  align-items: center;
+  padding: 16rpx 24rpx;
+  padding-bottom: calc(16rpx + env(safe-area-inset-bottom));
+  background: rgba(255,255,255,0.98);
+  border-top: 1rpx solid var(--c-moss);
+  gap: 16rpx;
+  flex-shrink: 0;
+}
+.chat-input {
+  flex: 1;
+  background: var(--c-fresh);
+  border-radius: 40rpx;
+  height: 80rpx;
+  padding: 0 32rpx;
+  font-size: 28rpx;
+  color: var(--c-text);
+  border: 2rpx solid transparent;
+}
+.send-btn {
+  padding: 0 36rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  background: var(--c-moss);
+  color: var(--c-text-light);
+  border-radius: 40rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+  letter-spacing: 2rpx;
+  transition: all 0.2s;
+}
+.send-btn.active {
+  background: var(--grad-primary);
+  color: #fff;
+  box-shadow: 0 4rpx 16rpx rgba(145, 203, 184, 0.35);
+}
+
+/* === 拍照按钮 === */
+.camera-btn {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  background: var(--c-fresh);
+  border: 2rpx solid var(--c-moss);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.camera-btn.disabled {
+  opacity: 0.45;
+}
+.camera-icon {
+  font-size: 36rpx;
+  line-height: 1;
+}
+
+/* === 聊天图片 === */
+.chat-image {
+  width: 320rpx;
+  height: 320rpx;
+  border-radius: 20rpx;
+  background: #eee;
+  flex-shrink: 0;
+}
+
+/* === 非遗识别卡片 === */
+.heritage-card {
+  max-width: 78%;
+  padding: 24rpx 28rpx;
+}
+.hc-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10rpx;
+}
+.hc-badge {
+  font-size: 20rpx;
+  color: #fff;
+  background: var(--grad-primary);
+  padding: 4rpx 16rpx;
+  border-radius: 20rpx;
+}
+.hc-badge-muted {
+  background: #b9c4bf;
+}
+.hc-conf {
+  font-size: 20rpx;
+  color: var(--c-text-light);
+}
+.hc-name {
+  display: block;
+  font-size: 34rpx;
+  font-weight: bold;
+  color: var(--c-primary-dark);
+  margin: 4rpx 0 12rpx;
+}
+.hc-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10rpx;
+  margin-bottom: 14rpx;
+}
+.hc-tag {
+  font-size: 22rpx;
+  color: var(--c-primary-dark);
+  background: var(--c-fresh);
+  padding: 4rpx 16rpx;
+  border-radius: 16rpx;
+}
+.hc-summary {
+  display: block;
+  font-size: 26rpx;
+  line-height: 1.7;
+  color: var(--c-text);
+}
+.hc-sec {
+  margin-top: 16rpx;
+}
+.hc-label {
+  display: block;
+  font-size: 24rpx;
+  font-weight: 600;
+  color: var(--c-primary-dark);
+  margin-bottom: 6rpx;
+}
+.hc-line,
+.hc-body {
+  display: block;
+  font-size: 24rpx;
+  line-height: 1.7;
+  color: var(--c-text);
+}
+.hc-narration {
+  margin-top: 18rpx;
+  padding: 18rpx 20rpx;
+  background: var(--c-fresh);
+  border-radius: 16rpx;
+  border-left: 6rpx solid var(--c-primary);
+}

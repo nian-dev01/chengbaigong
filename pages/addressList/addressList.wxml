@@ -1,0 +1,67 @@
+<view class="page">
+  <!-- 头部装饰 -->
+  <view class="page-header">
+    <text class="header-title">收货地址</text>
+    <text class="header-sub">管理您的收货信息</text>
+  </view>
+
+  <view class="addr-list">
+    <view class="addr-card tap-scale" wx:for="{{list}}" wx:key="id">
+      <!-- 选中圆圈（订单选择模式下显示） -->
+      <view class="select-circle {{item.selected ? 'on' : ''}}" wx:if="{{fromOrder}}" bindtap="selectAddr" data-id="{{item.id}}">
+        <view class="circle-inner" wx:if="{{item.selected}}">✓</view>
+      </view>
+
+      <view class="addr-main" bindtap="{{fromOrder ? 'selectAddr' : ''}}" data-id="{{item.id}}">
+        <!-- 姓名电话 -->
+        <view class="addr-top">
+          <text class="addr-name">{{item.name}}</text>
+          <text class="addr-phone">{{item.phone}}</text>
+          <view class="default-tag" wx:if="{{item.isDefault}}">默认</view>
+        </view>
+        <!-- 详细地址 -->
+        <view class="addr-detail-row">
+          <text class="addr-region">{{item.province}}{{item.city}}{{item.district}}</text>
+          <text class="addr-detail ellipsis-2">{{item.detail}}</text>
+        </view>
+      </view>
+
+      <!-- 操作区 -->
+      <view class="addr-actions">
+        <view class="action-row">
+          <view class="action-item tap-opacity" bindtap="editAddr" data-id="{{item.id}}">
+            <text class="action-icon">✏️</text>
+            <text class="action-text">编辑</text>
+          </view>
+          <view class="action-del tap-opacity" bindtap="delAddr" data-id="{{item.id}}">
+            <text class="action-icon">🗑️</text>
+            <text class="action-text">删除</text>
+          </view>
+        </view>
+        <!-- 设为默认 -->
+        <view class="set-default-row" bindtap="setDefault" data-id="{{item.id}}" wx:if="{{!item.isDefault}}">
+          <view class="checkbox {{item.isDefault ? 'on' : ''}}"></view>
+          <text class="set-default-text">设为默认地址</text>
+        </view>
+        <view class="set-default-row is-default" wx:else>
+          <view class="checkbox on"></view>
+          <text class="set-default-text">默认地址</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 空状态 -->
+  <view class="empty" wx:if="{{!list.length}}">
+    <view class="empty-icon">📬</view>
+    <text>还没有收货地址哦~</text>
+  </view>
+
+  <!-- 底部新增按钮 -->
+  <view class="bottom-bar">
+    <view class="btn-primary add-btn tap-scale" bindtap="addAddr">
+      <text class="add-icon">+</text>
+      <text>新增收货地址</text>
+    </view>
+  </view>
+</view>

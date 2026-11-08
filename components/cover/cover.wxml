@@ -1,0 +1,9 @@
+<!-- 双模式封面组件 -->
+<view class="cover" style="background: {{bg}};">
+  <!-- 有 src 且没失败 → 显示图片 -->
+  <image wx:if="{{src && !imgFailed}}" class="cover-img" src="{{src}}" mode="aspectFill" lazy-load binderror="onImgError"/>
+  <!-- 兜底文字 -->
+  <text class="cover-text" wx:if="{{imgFailed && showText}}">{{showText}}</text>
+  <text class="cover-text" wx:if="{{!src && showText}}">{{showText}}</text>
+  <text class="cover-emoji" wx:if="{{!src && emoji}}">{{emoji}}</text>
+</view>

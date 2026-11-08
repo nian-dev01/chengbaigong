@@ -1,0 +1,11 @@
+<view class="container">
+  <view class="form">
+    <view class="form-item"><text class="label">姓名</text><input class="val" value="{{form.name}}" bindinput="onInput" data-field="name"/></view>
+    <view class="form-item"><text class="label">职称</text><input class="val" value="{{form.title}}" bindinput="onInput" data-field="title"/></view>
+    <view class="form-item"><text class="label">类别</text><input class="val" value="{{form.category}}" bindinput="onInput" data-field="category"/></view>
+    <view class="form-item"><text class="label">地区</text><input class="val" value="{{form.region}}" bindinput="onInput" data-field="region"/></view>
+    <view class="form-item"><text class="label">电话</text><input class="val" value="{{form.phone}}" bindinput="onInput" data-field="phone"/></view>
+    <view class="form-item col"><text class="label">个人简介</text><textarea class="textarea" value="{{form.intro}}" bindinput="onInput" data-field="intro" maxlength="300"/></view>
+  </view>
+  <view class="btn-primary" bindtap="save">保存</view>
+</view>

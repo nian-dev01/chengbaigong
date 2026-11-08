@@ -1,0 +1,4 @@
+{
+  "navigationBarTitleText": "文创商品",
+  "usingComponents": { "cover": "/components/cover/cover" }
+}

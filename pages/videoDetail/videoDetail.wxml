@@ -1,0 +1,35 @@
+<view class="page" wx:if="{{item}}">
+  <view class="player">
+    <cover text="{{item.title}}" seed="{{item.id}}" src="{{item.cover}}"></cover>
+    <view class="play-overlay" bindtap="togglePlay">
+      <view class="play-btn">{{playing?'⏸':'▶'}}</view>
+    </view>
+    <view class="progress-bar">
+      <view class="progress" style="width:{{progress}}%"></view>
+    </view>
+    <view class="time">模拟播放 · {{progress}}%</view>
+  </view>
+
+  <view class="section card">
+    <view class="title">{{item.title}}</view>
+    <view class="meta-row">
+      <text>👁 {{item.views}} 播放</text>
+      <text>⏱ {{item.duration}}</text>
+    </view>
+    <view class="divider"></view>
+    <view class="intro">{{item.intro}}</view>
+  </view>
+
+  <view class="section card" wx:if="{{heritage}}">
+    <view class="section-title" style="margin-top:0">所属非遗</view>
+    <text class="link" bindtap="goHeritage" data-id="{{heritage.id}}">{{heritage.name}} ›</text>
+  </view>
+
+  <view class="bottom-bar">
+    <view class="action" bindtap="toggleFav">
+      <text class="a-icon">{{favorited?'❤️':'🤍'}}</text>
+      <text>{{favorited?'已收藏':'收藏'}}</text>
+    </view>
+    <view class="btn-primary flex1" bindtap="share">分享</view>
+  </view>
+</view>

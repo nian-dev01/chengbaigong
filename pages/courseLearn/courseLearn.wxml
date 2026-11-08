@@ -1,0 +1,47 @@
+<view class="page" wx:if="{{chapter}}">
+  <view class="player">
+    <cover text="{{chapter.title}}" seed="{{chapter.id}}"></cover>
+    <view class="play-overlay" bindtap="togglePlay">
+      <view class="play-btn">{{playing?'⏸':'▶'}}</view>
+    </view>
+    <view class="progress-bar"><view class="progress" style="width:{{progress}}%"></view></view>
+  </view>
+
+  <view class="section card">
+    <view class="title">{{chapter.title}}</view>
+    <text class="duration">时长 {{chapter.duration}}</text>
+  </view>
+
+  <view class="section card">
+    <view class="section-title" style="margin-top:0">课程目录</view>
+    <view class="chapter" wx:for="{{chapters}}" wx:key="id" bindtap="switchChapter" data-id="{{item.id}}">
+      <text class="ch-order">{{item.order}}</text>
+      <text class="ch-title flex1">{{item.title}}</text>
+      <text class="done" wx:if="{{progressMap[item.id] && progressMap[item.id].finished}}">✅</text>
+      <text class="arrow">›</text>
+    </view>
+  </view>
+
+  <view class="section card">
+    <view class="section-title" style="margin-top:0">学习打卡</view>
+    <view class="checkin-box">
+      <textarea class="ci-input" placeholder="记录今天的学习心得..." value="{{checkinContent}}" bindinput="onCheckin"/>
+      <view class="btn-primary mt-20" bindtap="doCheckin">今日打卡</view>
+    </view>
+    <view class="checkin-list" wx:if="{{checkins.length}}">
+      <view class="ci-item" wx:for="{{checkins}}" wx:key="id">
+        <text class="ci-day">{{item.day}}</text>
+        <text class="ci-content">{{item.content}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="section card">
+    <view class="section-title" style="margin-top:0">课程评价</view>
+    <view class="stars">
+      <text wx:for="{{[1,2,3,4,5]}}" wx:key="*this" class="star {{rating>=item?'on':''}}" bindtap="setRating" data-v="{{item}}">★</text>
+    </view>
+    <textarea class="rv-input" placeholder="评价一下这门课程..." value="{{reviewContent}}" bindinput="onReview"/>
+    <view class="btn-outline mt-20" bindtap="submitReview">提交评价</view>
+  </view>
+</view>

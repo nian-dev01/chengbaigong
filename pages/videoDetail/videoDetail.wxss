@@ -1,0 +1,17 @@
+.page {background: var(--grad-bg);
+ padding-bottom: 140rpx; }
+.player { height: 440rpx; position: relative; background: #000; }
+.play-overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+.play-btn { width: 120rpx; height: 120rpx; background: rgba(0,0,0,0.5); border-radius: 50%; color: #fff; font-size: 60rpx; display: flex; align-items: center; justify-content: center; }
+.progress-bar { position: absolute; bottom: 0; left: 0; right: 0; height: 8rpx; background: rgba(255,255,255,0.2); }
+.progress { height: 100%; background: var(--c-primary-dark); }
+.time { position: absolute; bottom: 16rpx; right: 20rpx; color: #fff; font-size: 22rpx; }
+.section { margin: 20rpx 24rpx; }
+.title { font-size: 36rpx; font-weight: bold; }
+.meta-row { display: flex; gap: 30rpx; margin-top: 14rpx; font-size: 24rpx; color: #999; }
+.divider { height: 1rpx; background: #f2f2f2; margin: 20rpx 0; }
+.intro { font-size: 28rpx; color: #555; line-height: 1.8; }
+.link { color: var(--c-primary-dark); font-size: 30rpx; }
+.bottom-bar { position: fixed; bottom: 0; left: 0; right: 0; background: #fff; padding: 16rpx 24rpx; display: flex; align-items: center; border-top: 1rpx solid #f2f2f2; gap: 20rpx; }
+.action { display: flex; flex-direction: column; align-items: center; font-size: 22rpx; color: #666; }
+.a-icon { font-size: 36rpx; }

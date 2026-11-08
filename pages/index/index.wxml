@@ -1,0 +1,146 @@
+<view class="page">
+  <!-- 顶部装饰光斑 -->
+  <view class="deco-blob deco-blob-1"></view>
+  <view class="deco-blob deco-blob-2"></view>
+  
+  <!-- 顶部搜索栏 -->
+  <view class="header">
+    <view class="search-bar tap-scale" bindtap="goHeritageList">
+      <text class="search-icon">🔍</text>
+      <text class="search-placeholder">搜索非遗文化、传承人、活动</text>
+      <text class="search-go">搜索</text>
+    </view>
+  </view>
+
+  <!-- Banner -->
+  <swiper class="banner" circular autoplay indicator-dots indicator-color="rgba(255,255,255,0.4)" indicator-active-color="#fff">
+    <swiper-item wx:for="{{banners}}" wx:key="id">
+      <view class="banner-item" style="background: {{item.bg}};">
+        <cover class="banner-cover" text="{{item.title}}" seed="banner_{{item.id}}" src="{{item.src}}"></cover>
+        <view class="banner-overlay">
+          <text class="banner-title">{{item.title}}</text>
+          <text class="banner-sub">{{item.sub}}</text>
+        </view>
+        <!-- 装饰圆圈 -->
+        <view class="banner-circle banner-circle-1"></view>
+        <view class="banner-circle banner-circle-2"></view>
+      </view>
+    </swiper-item>
+  </swiper>
+
+  <!-- 快捷入口 - 不规则九宫格 -->
+  <view class="quick-grid">
+    <view class="quick-item tap-scale" bindtap="goHeritageList">
+      <view class="quick-icon quick-icon-1">
+        <image class="quick-icon-img" src="/images/common/q_heritage.png" mode="aspectFill" />
+      </view>
+      <text class="quick-label">非遗</text>
+    </view>
+    <view class="quick-item tap-scale" bindtap="goCourseList">
+      <view class="quick-icon quick-icon-3">
+        <image class="quick-icon-img" src="/images/common/q_course.png" mode="aspectFill" />
+      </view>
+      <text class="quick-label">课程</text>
+    </view>
+    <view class="quick-item tap-scale" bindtap="goActivityList">
+      <view class="quick-icon quick-icon-4">
+        <image class="quick-icon-img" src="/images/common/q_activity.png" mode="aspectFill" />
+      </view>
+      <text class="quick-label">活动</text>
+    </view>
+    <view class="quick-item tap-scale" bindtap="applyInheritor">
+      <view class="quick-icon quick-icon-8">
+        <image class="quick-icon-img" src="/images/common/q_apply.png" mode="aspectFill" />
+      </view>
+      <text class="quick-label">申报</text>
+    </view>
+  </view>
+
+  <!-- 省份地图入口 - 不规则卡片 -->
+  <view class="map-entry tap-scale" bindtap="goHeritageMap">
+    <view class="map-bg-decor"></view>
+    <view class="map-content">
+      <text class="map-emoji">🗺️</text>
+      <view class="map-text">
+        <text class="map-title">华夏非遗地图</text>
+        <text class="map-sub">探索全国 34 省的文化瑰宝 →</text>
+      </view>
+    </view>
+    <view class="map-arrow">
+      <text>›</text>
+    </view>
+  </view>
+
+  <!-- 推荐非遗 -->
+  <view class="section">
+    <view class="section-title">
+      <text>为你推荐</text>
+      <text class="more tap-opacity" bindtap="goHeritageList">更多 ›</text>
+    </view>
+    <view class="heritage-list">
+      <view class="heritage-card tap-scale" wx:for="{{recommends}}" wx:key="id" bindtap="goHeritageDetail" data-id="{{item.id}}">
+        <view class="h-cover">
+          <cover text="{{item.name}}" seed="{{item.id}}" src="{{item.cover}}"></cover>
+        </view>
+        <view class="h-info">
+          <text class="h-name ellipsis-1">{{item.name}}</text>
+          <view class="h-meta">
+            <text class="tag tag-primary">{{item.level}}</text>
+            <text class="region">📍 {{item.region}}</text>
+          </view>
+          <text class="h-intro ellipsis-2">{{item.intro}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 热门活动 -->
+  <view class="section">
+    <view class="section-title">
+      <text>热门活动</text>
+      <text class="more tap-opacity" bindtap="goActivityList">更多 ›</text>
+    </view>
+    <scroll-view scroll-x class="activity-scroll" enhanced show-scrollbar="{{false}}">
+      <view class="activity-card tap-scale" wx:for="{{activities}}" wx:key="id" bindtap="goActivityDetail" data-id="{{item.id}}">
+        <view class="a-cover">
+          <cover text="{{item.title}}" seed="{{item.id}}" src="{{item.cover}}"></cover>
+        </view>
+        <text class="a-title ellipsis-1">{{item.title}}</text>
+        <text class="a-time">🕐 {{item.startTime}}</text>
+        <text class="a-addr">📍 {{item.region}}</text>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 精选课程 -->
+  <view class="section">
+    <view class="section-title">
+      <text>精选课程</text>
+      <text class="more tap-opacity" bindtap="goCourseList">更多 ›</text>
+    </view>
+    <view class="course-list">
+      <view class="course-card tap-scale" wx:for="{{courses}}" wx:key="id" bindtap="goCourseDetail" data-id="{{item.id}}">
+        <view class="c-cover">
+          <cover text="{{item.title}}" seed="{{item.id}}" src="{{item.cover}}"></cover>
+        </view>
+        <view class="c-info">
+          <text class="c-title ellipsis-1">{{item.title}}</text>
+          <text class="c-teacher">主讲：{{item.teacher}}</text>
+          <view class="c-bottom">
+            <text class="c-price">¥{{item.price}}</text>
+            <text class="students">{{item.students}}人在学</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部留白 -->
+  <view class="page-bottom"></view>
+
+  <!-- 悬浮在线咨询按钮 -->
+  <view class="fab-consult tap-scale" bindtap="goConsult">
+    <text class="fab-icon">💬</text>
+    <text class="fab-label">咨询</text>
+  </view>
+</view>

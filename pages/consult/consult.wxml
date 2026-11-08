@@ -1,0 +1,128 @@
+<view class="chat-page">
+  <!-- 头部 -->
+  <view class="chat-header">
+    <view class="header-left">
+      <view class="ai-avatar">
+        <image class="avatar-img" src="/images/common/小智.png" mode="aspectFill" />
+      </view>
+      <view class="ai-info">
+        <text class="ai-name">{{aiName}}</text>
+        <text class="ai-status">在线 · AI 智能客服 · 支持拍照识非遗</text>
+      </view>
+    </view>
+    <view class="header-deco"></view>
+  </view>
+
+  <!-- 消息区 -->
+  <scroll-view class="chat-box" scroll-y scroll-into-view="{{scrollId}}" scroll-with-animation>
+    <block wx:for="{{msgs}}" wx:key="id">
+      <!-- AI 消息 -->
+      <view class="msg-row ai-row" wx:if="{{item.fromAI}}" id="msg-{{item.id}}">
+        <view class="msg-avatar ai-avatar-mini">
+          <image class="avatar-img" src="/images/common/小智.png" mode="aspectFill" />
+        </view>
+
+        <!-- 非遗识别结果卡片 -->
+        <view class="msg-bubble ai-bubble heritage-card" wx:if="{{item.heritage}}">
+          <view class="hc-head">
+            <text class="hc-badge {{item.heritage.isHeritage ? '' : 'hc-badge-muted'}}">
+              {{item.heritage.isHeritage ? '非遗识别' : '未识别到非遗'}}
+            </text>
+            <text class="hc-conf" wx:if="{{item.heritage.confidence}}">置信度 {{item.heritage.confidence}}%</text>
+          </view>
+          <text class="hc-name">{{item.heritage.name}}</text>
+          <view class="hc-tags">
+            <text class="hc-tag" wx:if="{{item.heritage.category}}">{{item.heritage.category}}</text>
+            <text class="hc-tag" wx:if="{{item.heritage.region}}">{{item.heritage.region}}</text>
+          </view>
+          <text class="hc-summary" wx:if="{{item.heritage.summary}}">{{item.heritage.summary}}</text>
+          <view class="hc-sec" wx:if="{{item.heritage.features.length}}">
+            <text class="hc-label">工艺 / 艺术特征</text>
+            <text class="hc-line" wx:for="{{item.heritage.features}}" wx:for-item="f" wx:key="*this">· {{f}}</text>
+          </view>
+          <view class="hc-sec" wx:if="{{item.heritage.history}}">
+            <text class="hc-label">历史渊源</text>
+            <text class="hc-body">{{item.heritage.history}}</text>
+          </view>
+          <view class="hc-narration" wx:if="{{item.heritage.narration}}">
+            <text class="hc-label">🎙 解说</text>
+            <text class="hc-body">{{item.heritage.narration}}</text>
+          </view>
+        </view>
+
+        <!-- 普通文字回复 -->
+        <view class="msg-bubble ai-bubble" wx:else>
+          <text class="bubble-text">{{item.content}}</text>
+          <view class="typing-dots" wx:if="{{item.typing}}">
+            <view class="dot"></view>
+            <view class="dot dot-2"></view>
+            <view class="dot dot-3"></view>
+          </view>
+        </view>
+      </view>
+
+      <!-- 用户消息 -->
+      <view class="msg-row user-row" wx:else id="msg-{{item.id}}">
+        <image
+          wx:if="{{item.image}}"
+          class="chat-image"
+          src="{{item.image}}"
+          mode="aspectFill"
+          data-src="{{item.image}}"
+          bindtap="previewImage"
+        />
+        <view class="msg-bubble user-bubble" wx:if="{{item.content}}">
+          <text class="bubble-text">{{item.content}}</text>
+        </view>
+        <view class="msg-avatar user-avatar">我</view>
+      </view>
+    </block>
+
+    <!-- 客服正在输入指示器 -->
+    <view class="typing-indicator" wx:if="{{typing}}">
+      <view class="typing-dots">
+        <view class="dot"></view>
+        <view class="dot dot-2"></view>
+        <view class="dot dot-3"></view>
+      </view>
+      <text class="typing-text">正在思考</text>
+    </view>
+
+    <!-- 照片识别中 -->
+    <view class="typing-indicator" wx:if="{{recognizing}}">
+      <view class="typing-dots">
+        <view class="dot"></view>
+        <view class="dot dot-2"></view>
+        <view class="dot dot-3"></view>
+      </view>
+      <text class="typing-text">正在识别照片，马上为你解说…</text>
+    </view>
+  </scroll-view>
+
+  <!-- 快捷提问 -->
+  <view class="quick-wrap" wx:if="{{msgs.length <= 1}}" scroll-x>
+    <view class="quick-item tap-opacity" wx:for="{{quickQuestions}}" wx:key="*this" data-q="{{item}}" bindtap="useQuick">
+      <text>{{item}}</text>
+    </view>
+  </view>
+
+  <!-- 输入栏 -->
+  <view class="input-bar">
+    <view class="camera-btn tap-scale {{recognizing ? 'disabled' : ''}}" bindtap="takePhoto">
+      <text class="camera-icon">📷</text>
+    </view>
+    <input
+      class="chat-input"
+      placeholder="输入你的问题，或点 📷 拍照识非遗~"
+      placeholder-style="color: #95A89D"
+      value="{{content}}"
+      bindinput="onInput"
+      confirm-type="send"
+      bindconfirm="send"
+      confirm-hold="{{false}}"
+    />
+    <view class="send-btn tap-scale {{content ? 'active' : ''}}" bindtap="send">
+      <text>发送</text>
+    </view>
+  </view>
+</view>

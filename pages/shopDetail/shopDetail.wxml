@@ -1,0 +1,25 @@
+<view class="page" wx:if="{{shop}}">
+  <view class="shop-header">
+    <view class="s-avatar">{{shop.name[0]}}</view>
+    <view class="s-info flex1">
+      <text class="s-name">{{shop.name}}</text>
+      <text class="s-region">📍 {{shop.region}}</text>
+      <text class="s-intro">{{shop.intro}}</text>
+    </view>
+  </view>
+  <view class="s-stats row">
+    <text>⭐ 评分 {{shop.rating}}</text>
+    <text>📦 销量 {{shop.sales}}</text>
+    <text>🎨 商品 {{products.length}}</text>
+  </view>
+
+  <view class="product-grid">
+    <view class="p-card" wx:for="{{products}}" wx:key="id" bindtap="goProduct" data-id="{{item.id}}">
+      <view class="p-cover"><cover text="{{item.name}}" seed="{{item.id}}" src="{{item.cover}}"></cover></view>
+      <view class="p-info">
+        <text class="p-name ellipsis-2">{{item.name}}</text>
+        <text class="price">¥{{item.price}}</text>
+      </view>
+    </view>
+  </view>
+</view>

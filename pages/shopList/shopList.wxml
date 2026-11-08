@@ -1,0 +1,38 @@
+<view class="page">
+  <view class="search">
+    <input class="search-input" placeholder="搜索文创商品 / 店铺" value="{{keyword}}" bindinput="onSearch"/>
+  </view>
+  <view class="tabs">
+    <text class="tab {{tab==='shop'?'active':''}}" bindtap="setTab" data-v="shop">店铺</text>
+    <text class="tab {{tab==='product'?'active':''}}" bindtap="setTab" data-v="product">商品</text>
+  </view>
+
+  <!-- 店铺列表 -->
+  <view class="list" wx:if="{{tab==='shop'}}">
+    <view class="shop-card" wx:for="{{shops}}" wx:key="id" bindtap="goShop" data-id="{{item.id}}">
+      <view class="s-avatar">{{item.name[0]}}</view>
+      <view class="s-info flex1">
+        <text class="s-name">{{item.name}}</text>
+        <text class="s-region">📍 {{item.region}}</text>
+        <view class="s-meta"><text>⭐ {{item.rating}}</text><text>销量 {{item.sales}}</text></view>
+      </view>
+      <text class="arrow">›</text>
+    </view>
+    <view class="empty" wx:if="{{!shops.length}}">暂无店铺</view>
+  </view>
+
+  <!-- 商品列表 -->
+  <view class="product-grid" wx:else>
+    <view class="p-card" wx:for="{{products}}" wx:key="id" bindtap="goProduct" data-id="{{item.id}}">
+      <view class="p-cover"><cover text="{{item.name}}" seed="{{item.id}}" src="{{item.cover}}"></cover></view>
+      <view class="p-info">
+        <text class="p-name ellipsis-2">{{item.name}}</text>
+        <view class="p-bottom between">
+          <text class="price">¥{{item.price}}</text>
+          <text class="sales">已售{{item.sales}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="empty" wx:if="{{!products.length}}">暂无商品</view>
+  </view>
+</view>

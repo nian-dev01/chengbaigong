@@ -1,0 +1,4 @@
+{
+  "navigationBarTitleText": "非遗商城",
+  "usingComponents": { "cover": "/components/cover/cover" }
+}

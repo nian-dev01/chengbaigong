@@ -1,0 +1,27 @@
+.page { background: var(--grad-bg); min-height: 100vh; }
+.search { padding: 20rpx 24rpx; background: var(--c-moss); }
+.search-input { background: var(--c-card); border-radius: 40rpx; height: 72rpx; padding: 0 30rpx; font-size: 28rpx; color: var(--c-text); }
+.cat-bar { background: var(--c-moss); white-space: nowrap; padding: 10rpx 24rpx 20rpx; }
+.cat-tab { display: inline-block; padding: 10rpx 28rpx; margin-right: 16rpx; background: var(--c-fresh); border-radius: 30rpx; font-size: 26rpx; color: var(--c-text-soft); transition: all 0.2s ease; }
+.cat-tab.active { background: var(--grad-primary); color: #fff; box-shadow: var(--shadow-soft); }
+.list { padding: 20rpx 24rpx; }
+.card {
+  background: var(--c-card);
+  border-radius: 24rpx 16rpx 24rpx 16rpx;
+  margin-bottom: 20rpx; overflow: hidden; display: flex;
+  box-shadow: var(--shadow-card);
+  border: 1rpx solid var(--c-fresh);
+  transition: transform 0.15s ease;
+}
+.card:active { transform: scale(0.98); }
+.cover { width: 240rpx; height: 180rpx; flex-shrink: 0; }
+.info { flex: 1; padding: 20rpx; display: flex; flex-direction: column; }
+.title { font-size: 30rpx; font-weight: bold; color: var(--c-text); }
+.teacher { font-size: 24rpx; color: var(--c-text-light); margin-top: 6rpx; }
+.intro { font-size: 24rpx; color: var(--c-text-soft); margin-top: 6rpx; }
+.bottom { margin-top: auto; }
+.price-box { display: flex; align-items: baseline; gap: 10rpx; }
+.price { font-size: 32rpx; color: var(--c-primary-dark); font-weight: bold; }
+.price.free { color: var(--c-primary); }
+.origin { font-size: 22rpx; color: var(--c-text-light); text-decoration: line-through; }
+.students { font-size: 22rpx; color: var(--c-text-light); }

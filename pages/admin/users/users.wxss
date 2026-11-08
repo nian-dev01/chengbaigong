@@ -1,0 +1,11 @@
+.page { padding: 20rpx 24rpx; }
+.item { background: #fff; border-radius: 16rpx; padding: 20rpx; margin-bottom: 16rpx; display: flex; align-items: center; }
+.avatar { width: 70rpx; height: 70rpx; border-radius: 50%; background: linear-gradient(135deg,var(--c-primary-dark),var(--c-primary)); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 28rpx; font-weight: bold; margin-right: 16rpx; }
+.name { font-size: 28rpx; font-weight: bold; display: block; }
+.meta { font-size: 22rpx; color: #999; display: block; margin-top: 4rpx; }
+.roles { display: flex; gap: 10rpx; margin-top: 8rpx; }
+.role-tag { font-size: 20rpx; background: #f5f5f5; color: #666; padding: 2rpx 12rpx; border-radius: 8rpx; }
+.status { font-size: 20rpx; padding: 2rpx 12rpx; border-radius: 8rpx; }
+.status.on { background: #e8f9ef; color: var(--c-primary); }
+.status.off { background: #fdecec; color: var(--c-primary-dark); }
+.toggle { font-size: 24rpx; color: var(--c-primary-dark); padding: 8rpx 16rpx; border: 1rpx solid var(--c-primary-dark); border-radius: 20rpx; }

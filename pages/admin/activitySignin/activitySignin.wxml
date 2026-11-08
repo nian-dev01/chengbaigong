@@ -1,0 +1,21 @@
+<view class="page">
+  <view class="sel">
+    <picker mode="selector" range="{{activityNames}}" value="{{actIdx}}" bindchange="onAct">
+      <view class="picker-box">选择活动：{{activityNames[actIdx]||'请选择'}} ▾</view>
+    </picker>
+  </view>
+  <view class="list" wx:if="{{regs.length}}">
+    <view class="item" wx:for="{{regs}}" wx:key="id">
+      <view class="avatar">{{item.userName[0]}}</view>
+      <view class="info flex1">
+        <text class="name">{{item.userName}}</text>
+        <text class="meta">{{item.phone}}</text>
+      </view>
+      <view class="status-box">
+        <text class="tag {{item.status==='signed'?'tag-green':'tag-orange'}}">{{item.status==='signed'?'已签到':'未签到'}}</text>
+        <text class="code">签到码：{{item.signinCode}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="empty" wx:else>暂无报名记录</view>
+</view>

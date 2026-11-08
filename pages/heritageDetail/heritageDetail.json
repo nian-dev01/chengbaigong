@@ -1,0 +1,4 @@
+{
+  "navigationBarTitleText": "非遗详情",
+  "usingComponents": { "cover": "/components/cover/cover" }
+}

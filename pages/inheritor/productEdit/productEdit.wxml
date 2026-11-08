@@ -1,0 +1,11 @@
+<view class="container">
+  <view class="form">
+    <view class="form-item"><text class="label">商品名</text><input class="val" value="{{form.name}}" bindinput="onInput" data-field="name"/></view>
+    <view class="form-item"><text class="label">类别</text><input class="val" value="{{form.category}}" bindinput="onInput" data-field="category"/></view>
+    <view class="form-item"><text class="label">价格</text><input class="val" type="digit" value="{{form.price}}" bindinput="onInput" data-field="price"/></view>
+    <view class="form-item"><text class="label">原价</text><input class="val" type="digit" value="{{form.originalPrice}}" bindinput="onInput" data-field="originalPrice"/></view>
+    <view class="form-item"><text class="label">库存</text><input class="val" type="number" value="{{form.stock}}" bindinput="onInput" data-field="stock"/></view>
+    <view class="form-item col"><text class="label">商品介绍</text><textarea class="textarea" value="{{form.intro}}" bindinput="onInput" data-field="intro" maxlength="300"/></view>
+  </view>
+  <view class="btn-primary" bindtap="save">保存</view>
+</view>

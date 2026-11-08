@@ -1,0 +1,4 @@
+{
+  "navigationBarTitleText": "非遗文化管理",
+  "usingComponents": { "cover": "/components/cover/cover" }
+}

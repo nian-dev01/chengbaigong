@@ -1,0 +1,23 @@
+<view class="container">
+  <view wx:if="{{tab===0}}">
+    <view class="form">
+      <view class="form-item">
+        <text class="label">昵称</text>
+        <input class="val" value="{{form.nickname}}" bindinput="onInput" data-field="nickname"/>
+      </view>
+      <view class="form-item">
+        <text class="label">手机号</text>
+        <input class="val" type="number" maxlength="11" value="{{form.phone}}" bindinput="onInput" data-field="phone"/>
+      </view>
+      <view class="btn-primary mt-30" bindtap="save">保存修改</view>
+    </view>
+  </view>
+  <view wx:else>
+    <view class="form">
+      <view class="form-item"><text class="label">原密码</text><input class="val" password value="{{oldPwd}}" bindinput="onInput" data-field="oldPwd"/></view>
+      <view class="form-item"><text class="label">新密码</text><input class="val" password value="{{newPwd}}" bindinput="onInput" data-field="newPwd"/></view>
+      <view class="form-item"><text class="label">确认密码</text><input class="val" password value="{{newPwd2}}" bindinput="onInput" data-field="newPwd2"/></view>
+      <view class="btn-primary mt-30" bindtap="changePwd">确认修改</view>
+    </view>
+  </view>
+</view>

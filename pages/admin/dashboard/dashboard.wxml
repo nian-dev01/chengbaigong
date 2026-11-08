@@ -1,0 +1,31 @@
+<view class="page">
+  <view class="header">
+    <text class="title">管理后台</text>
+    <text class="sub">非遗文化管理系统</text>
+  </view>
+  <view class="stat-grid">
+    <view class="stat-card"><text class="num">{{stats.userCount}}</text><text class="lbl">用户数</text></view>
+    <view class="stat-card"><text class="num">{{stats.inheritorCount}}</text><text class="lbl">传承人</text></view>
+    <view class="stat-card"><text class="num">{{stats.heritageCount}}</text><text class="lbl">非遗项目</text></view>
+    <view class="stat-card"><text class="num">{{stats.videoCount}}</text><text class="lbl">视频</text></view>
+    <view class="stat-card"><text class="num">{{stats.activityCount}}</text><text class="lbl">活动</text></view>
+    <view class="stat-card"><text class="num">{{stats.courseCount}}</text><text class="lbl">课程</text></view>
+    <view class="stat-card"><text class="num">{{stats.orderCount}}</text><text class="lbl">订单</text></view>
+    <view class="stat-card"><text class="num">{{stats.topicCount}}</text><text class="lbl">话题</text></view>
+  </view>
+
+  <view class="menu">
+    <view class="m-item" bindtap="go" data-url="/pages/admin/users/users"><text>👥</text><text>用户管理</text><text class="arrow">›</text></view>
+    <view class="m-item" bindtap="go" data-url="/pages/admin/applyReview/applyReview"><text>🏅</text><text>传承人申请审核</text><text class="arrow">›</text></view>
+    <view class="m-item" bindtap="go" data-url="/pages/admin/heritage/heritage"><text>🏛️</text><text>非遗文化管理</text><text class="arrow">›</text></view>
+    <view class="m-item" bindtap="go" data-url="/pages/admin/videos/videos"><text>🎬</text><text>视频管理</text><text class="arrow">›</text></view>
+    <view class="m-item" bindtap="go" data-url="/pages/admin/activities/activities"><text>🎉</text><text>活动管理</text><text class="arrow">›</text></view>
+    <view class="m-item" bindtap="go" data-url="/pages/admin/activitySignin/activitySignin"><text>✅</text><text>活动签到管理</text><text class="arrow">›</text></view>
+    <view class="m-item" bindtap="go" data-url="/pages/admin/courses/courses"><text>📚</text><text>课程管理</text><text class="arrow">›</text></view>
+    <view class="m-item" bindtap="go" data-url="/pages/admin/topics/topics"><text>💬</text><text>话题审核</text><text class="arrow">›</text></view>
+    <view class="m-item" bindtap="go" data-url="/pages/admin/announcements/announcements"><text>📢</text><text>公告管理</text><text class="arrow">›</text></view>
+    <view class="m-item" bindtap="go" data-url="/pages/admin/statistics/statistics"><text>📊</text><text>综合分析统计</text><text class="arrow">›</text></view>
+  </view>
+
+  <view class="card" bindtap="backHome"><text class="back">← 返回首页</text></view>
+</view>

@@ -1,0 +1,8 @@
+<view class="container">
+  <view class="form">
+    <view class="form-item"><text class="label">店铺名</text><input class="val" value="{{form.name}}" bindinput="onInput" data-field="name"/></view>
+    <view class="form-item"><text class="label">地区</text><input class="val" value="{{form.region}}" bindinput="onInput" data-field="region"/></view>
+    <view class="form-item col"><text class="label">店铺简介</text><textarea class="textarea" value="{{form.intro}}" bindinput="onInput" data-field="intro" maxlength="200"/></view>
+  </view>
+  <view class="btn-primary" bindtap="save">保存店铺</view>
+</view>

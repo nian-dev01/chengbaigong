@@ -1,0 +1,19 @@
+<view class="container">
+  <view class="form">
+    <view class="form-item">
+      <text class="label">分类</text>
+      <picker mode="selector" range="{{categoryNames}}" value="{{catIndex}}" bindchange="onCat">
+        <view class="picker">{{categories.length ? categories[catIndex].name : '请选择分类'}} ▾</view>
+      </picker>
+    </view>
+    <view class="form-item col">
+      <text class="label">标题</text>
+      <input class="input" placeholder="请输入话题标题" value="{{title}}" bindinput="onInput" data-field="title" maxlength="50"/>
+    </view>
+    <view class="form-item col">
+      <text class="label">内容</text>
+      <textarea class="textarea" placeholder="分享你的非遗故事..." value="{{content}}" bindinput="onInput" data-field="content" maxlength="500"/>
+    </view>
+  </view>
+  <view class="btn-primary" bindtap="publish">发布话题</view>
+</view>

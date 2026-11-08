@@ -1,0 +1,31 @@
+<view class="page">
+  <scroll-view scroll-x class="cat-bar" enhanced show-scrollbar="{{false}}">
+    <view class="cat-tab {{activeCat===0?'active':''}}" bindtap="setCat" data-id="0">全部</view>
+    <view class="cat-tab {{activeCat===item.id?'active':''}}" wx:for="{{categories}}" wx:key="id" bindtap="setCat" data-id="{{item.id}}">{{item.name}}</view>
+  </scroll-view>
+  <view class="list">
+    <view class="topic-card" wx:for="{{list}}" wx:key="id" bindtap="goDetail" data-id="{{item.id}}">
+      <view class="user-row">
+        <image class="avatar" wx:if="{{item.userAvatar}}" src="{{item.userAvatar}}" mode="aspectFill"></image>
+        <view class="avatar" wx:else>{{item.userName[0]}}</view>
+        <view class="u-info">
+          <text class="u-name">{{item.userName}}</text>
+          <text class="u-time">{{item.createTime}}</text>
+        </view>
+        <text class="tag tag-red" wx:if="{{item.isRecommend}}">推荐</text>
+      </view>
+      <text class="t-title">{{item.title}}</text>
+      <text class="t-content ellipsis-2">{{item.content}}</text>
+      <view class="t-bottom">
+        <view class="metas">
+          <text class="meta">👁 {{item.views}}</text>
+          <text class="meta">💬 {{item.comments}}</text>
+          <text class="meta">❤️ {{item.likes}}</text>
+        </view>
+        <text class="del" wx:if="{{item.userId == myId}}" catchtap="delTopic" data-id="{{item.id}}">删除</text>
+      </view>
+    </view>
+    <view class="empty" wx:if="{{!list.length}}">暂无话题</view>
+  </view>
+  <view class="fab" bindtap="publish">✏️</view>
+</view>

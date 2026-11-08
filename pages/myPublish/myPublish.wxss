@@ -1,0 +1,9 @@
+.page { padding: 20rpx 24rpx; }
+.card { background: #fff; border-radius: 16rpx; padding: 24rpx; margin-bottom: 20rpx; }
+.title { font-size: 30rpx; font-weight: bold; flex: 1; }
+.time { font-size: 22rpx; color: #999; margin-left: 10rpx; }
+.content { font-size: 26rpx; color: #666; margin-top: 12rpx; line-height: 1.6; display: block; }
+.bottom { margin-top: 16rpx; }
+.meta { display: flex; gap: 24rpx; font-size: 22rpx; color: #999; }
+.ops { display: flex; align-items: center; gap: 16rpx; }
+.del { font-size: 22rpx; color: #C0392B; padding: 6rpx 20rpx; border: 1rpx solid #E6B8B2; border-radius: 24rpx; }

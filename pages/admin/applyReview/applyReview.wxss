@@ -1,0 +1,13 @@
+.page { padding: 20rpx 24rpx; }
+.item { background: #fff; border-radius: 16rpx; padding: 24rpx; margin-bottom: 20rpx; }
+.name { font-size: 30rpx; font-weight: bold; }
+.status { font-size: 24rpx; padding: 4rpx 16rpx; border-radius: 20rpx; }
+.status.pending { background: #fff3e0; color: #ff8c1a; }
+.status.pass { background: #e8f9ef; color: var(--c-primary); }
+.status.reject { background: #fdecec; color: var(--c-primary-dark); }
+.meta-row { font-size: 26rpx; color: #666; margin-top: 10rpx; display: flex; }
+.meta-row text:first-child { color: #999; width: 120rpx; flex-shrink: 0; }
+.ops { display: flex; gap: 16rpx; margin-top: 20rpx; }
+.pass, .reject { flex: 1; text-align: center; padding: 14rpx 0; border-radius: 30rpx; font-size: 26rpx; }
+.pass { background: var(--c-primary); color: #fff; }
+.reject { background: var(--c-primary-dark); color: #fff; }

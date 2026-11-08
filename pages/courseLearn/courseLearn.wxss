@@ -1,0 +1,26 @@
+.page {background: var(--grad-bg);
+ padding-bottom: 40rpx; }
+.player { height: 420rpx; position: relative; background: #000; }
+.play-overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+.play-btn { width: 110rpx; height: 110rpx; background: rgba(0,0,0,0.5); border-radius: 50%; color: #fff; font-size: 56rpx; display: flex; align-items: center; justify-content: center; }
+.progress-bar { position: absolute; bottom: 0; left: 0; right: 0; height: 8rpx; background: rgba(255,255,255,0.2); }
+.progress { height: 100%; background: var(--c-primary-dark); }
+.section { margin: 20rpx 24rpx; }
+.title { font-size: 32rpx; font-weight: bold; }
+.duration { font-size: 24rpx; color: #999; display: block; margin-top: 8rpx; }
+
+.chapter { display: flex; align-items: center; padding: 18rpx 0; border-bottom: 1rpx solid #f5f5f5; }
+.chapter:last-child { border-bottom: none; }
+.ch-order { width: 44rpx; height: 44rpx; border-radius: 50%; background: #f5f5f5; color: #999; display: flex; align-items: center; justify-content: center; font-size: 22rpx; margin-right: 14rpx; }
+.ch-title { font-size: 26rpx; }
+.done { font-size: 24rpx; margin-right: 8rpx; }
+.arrow { color: #ccc; font-size: 28rpx; }
+
+.ci-input, .rv-input { width: 100%; height: 140rpx; background: #f5f5f5; border-radius: 12rpx; padding: 16rpx; box-sizing: border-box; font-size: 26rpx; }
+.checkin-list { margin-top: 20rpx; }
+.ci-item { padding: 12rpx 0; border-bottom: 1rpx solid #f5f5f5; }
+.ci-day { font-size: 22rpx; color: #999; display: block; }
+.ci-content { font-size: 26rpx; color: #666; }
+.stars { margin-bottom: 16rpx; }
+.star { font-size: 52rpx; color: #ddd; margin-right: 6rpx; }
+.star.on { color: var(--c-gold); }

@@ -1,0 +1,41 @@
+<view class="page" wx:if="{{topic}}">
+  <view class="card">
+    <view class="user-row">
+      <image class="avatar" wx:if="{{topic.userAvatar}}" src="{{topic.userAvatar}}" mode="aspectFill"></image>
+      <view class="avatar" wx:else>{{topic.userName[0]}}</view>
+      <view class="u-info flex1">
+        <text class="u-name">{{topic.userName}}</text>
+        <text class="u-time">{{topic.createTime}}</text>
+      </view>
+    </view>
+    <text class="t-title">{{topic.title}}</text>
+    <text class="t-content">{{topic.content}}</text>
+    <view class="t-stats between">
+      <text>👁 {{topic.views}} 浏览</text>
+      <view class="actions">
+        <text class="act {{liked?'liked':''}}" bindtap="toggleLike">{{liked?'❤️':'🤍'}} {{topic.likes}}</text>
+        <text class="act" bindtap="toggleFav">{{favorited?'⭐':'☆'}} 收藏</text>
+        <text class="act del-act" wx:if="{{isOwner}}" bindtap="delTopic">删除</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="section-title" style="margin-top:0">全部评论 ({{comments.length}})</view>
+    <view class="comment" wx:for="{{comments}}" wx:key="id">
+      <image class="c-avatar" wx:if="{{item.userAvatar}}" src="{{item.userAvatar}}" mode="aspectFill"></image>
+      <view class="c-avatar" wx:else>{{item.userName[0]}}</view>
+      <view class="c-body">
+        <text class="c-name">{{item.userName}}</text>
+        <text class="c-content">{{item.content}}</text>
+        <text class="c-time">{{item.createTime}}</text>
+      </view>
+    </view>
+    <view class="empty" wx:if="{{!comments.length}}">暂无评论</view>
+  </view>
+
+  <view class="bottom-bar">
+    <input class="comment-input" placeholder="说点什么..." value="{{comment}}" bindinput="onComment" confirm-type="send" bindconfirm="sendComment"/>
+    <view class="btn-primary send-btn" bindtap="sendComment">发送</view>
+  </view>
+</view>

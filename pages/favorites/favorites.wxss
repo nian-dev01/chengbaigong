@@ -1,0 +1,10 @@
+.page { background: var(--grad-bg); }
+.tabs { background: #fff; display: flex; padding: 0 10rpx; position: sticky; top: 0; z-index: 10; overflow-x: auto; white-space: nowrap; }
+.tab { padding: 24rpx 20rpx; font-size: 26rpx; color: #666; }
+.tab.active { color: var(--c-primary-dark); font-weight: bold; }
+.list { padding: 20rpx 24rpx; }
+.card { background: #fff; border-radius: 16rpx; margin-bottom: 20rpx; overflow: hidden; display: flex; }
+.cover { width: 200rpx; height: 160rpx; flex-shrink: 0; }
+.info { flex: 1; padding: 20rpx; display: flex; flex-direction: column; justify-content: center; }
+.name { font-size: 28rpx; font-weight: bold; }
+.sub { font-size: 24rpx; color: #999; margin-top: 8rpx; }

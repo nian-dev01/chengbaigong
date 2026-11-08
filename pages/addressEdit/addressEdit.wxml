@@ -1,0 +1,35 @@
+<view class="container">
+  <view class="form-card">
+    <view class="form-item">
+      <text class="label">收货人</text>
+      <input class="val" placeholder="请输入姓名" placeholder-style="color: var(--c-text-light)" value="{{form.name}}" bindinput="onInput" data-field="name"/>
+    </view>
+    <view class="form-item">
+      <text class="label">手机号</text>
+      <input class="val" type="number" maxlength="11" placeholder="请输入手机号" placeholder-style="color: var(--c-text-light)" value="{{form.phone}}" bindinput="onInput" data-field="phone"/>
+    </view>
+    <view class="form-item">
+      <text class="label">省份</text>
+      <input class="val" placeholder="如：江苏省" placeholder-style="color: var(--c-text-light)" value="{{form.province}}" bindinput="onInput" data-field="province"/>
+    </view>
+    <view class="form-item">
+      <text class="label">城市</text>
+      <input class="val" placeholder="如：苏州市" placeholder-style="color: var(--c-text-light)" value="{{form.city}}" bindinput="onInput" data-field="city"/>
+    </view>
+    <view class="form-item">
+      <text class="label">区县</text>
+      <input class="val" placeholder="如：姑苏区" placeholder-style="color: var(--c-text-light)" value="{{form.district}}" bindinput="onInput" data-field="district"/>
+    </view>
+    <view class="form-item form-item-last">
+      <text class="label">详细地址</text>
+      <input class="val" placeholder="街道、门牌号等" placeholder-style="color: var(--c-text-light)" value="{{form.detail}}" bindinput="onInput" data-field="detail"/>
+    </view>
+  </view>
+
+  <view class="switch-card">
+    <text class="label">设为默认地址</text>
+    <switch checked="{{form.isDefault}}" bindchange="onDefault" color="#91CBB8"/>
+  </view>
+
+  <view class="btn-primary save-btn tap-scale" bindtap="save">保存地址</view>
+</view>

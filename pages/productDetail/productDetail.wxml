@@ -1,0 +1,40 @@
+<view class="page" wx:if="{{item}}">
+  <view class="cover"><cover text="{{item.name}}" seed="{{item.id}}" src="{{item.cover}}"></cover></view>
+
+  <view class="section card">
+    <view class="price-row">
+      <text class="price">¥{{item.price}}</text>
+      <text class="origin" wx:if="{{item.originalPrice>0}}">¥{{item.originalPrice}}</text>
+      <text class="sales">已售 {{item.sales}}</text>
+    </view>
+    <view class="title">{{item.name}}</view>
+    <view class="tags">
+      <text class="tag tag-red">非遗文创</text>
+      <text class="tag tag-blue">{{item.category}}</text>
+    </view>
+  </view>
+
+  <view class="section card" wx:if="{{shop}}">
+    <view class="shop-row row" bindtap="goShop">
+      <view class="s-avatar">{{shop.name[0]}}</view>
+      <view class="flex1">
+        <text class="s-name">{{shop.name}}</text>
+        <text class="s-region">⭐ {{shop.rating}} · 📍 {{shop.region}}</text>
+      </view>
+      <text class="arrow">进店 ›</text>
+    </view>
+  </view>
+
+  <view class="section card">
+    <view class="section-title" style="margin-top:0">商品介绍</view>
+    <view class="intro">{{item.intro}}</view>
+    <view class="stock">库存：{{item.stock}} 件</view>
+  </view>
+
+  <view class="bottom-bar">
+    <view class="action" bindtap="goCart"><text class="a-icon">🛒</text><text>购物车</text></view>
+    <view class="action" bindtap="toggleFav"><text class="a-icon">{{favorited?'❤️':'🤍'}}</text><text>{{favorited?'已收藏':'收藏'}}</text></view>
+    <view class="btn-cart" bindtap="addCart">加入购物车</view>
+    <view class="btn-buy" bindtap="buyNow">立即购买</view>
+  </view>
+</view>

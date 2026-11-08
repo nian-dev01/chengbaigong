@@ -1,0 +1,13 @@
+<view class="page">
+  <view class="list">
+    <view class="card" wx:for="{{list}}" wx:key="id">
+      <view class="top between">
+        <text class="title">{{item.title}}</text>
+        <text class="tag {{item.type==='activity'?'tag-orange':'tag-blue'}}">{{item.type==='activity'?'活动':'系统'}}</text>
+      </view>
+      <view class="content">{{item.content}}</view>
+      <text class="time">{{item.createTime}}</text>
+    </view>
+    <view class="empty" wx:if="{{!list.length}}">暂无公告</view>
+  </view>
+</view>

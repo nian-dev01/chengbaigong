@@ -1,0 +1,4 @@
+{
+  "navigationBarTitleText": "非遗视频",
+  "usingComponents": { "cover": "/components/cover/cover" }
+}

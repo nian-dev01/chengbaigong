@@ -1,0 +1,29 @@
+.cover {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+.cover-img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.cover-text {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 26rpx;
+  font-weight: bold;
+  padding: 0 20rpx;
+  text-align: center;
+  text-shadow: 0 1rpx 4rpx rgba(0, 0, 0, 0.2);
+}
+.cover-emoji {
+  font-size: 80rpx;
+  opacity: 0.85;
+}

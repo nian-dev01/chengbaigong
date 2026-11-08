@@ -1,0 +1,28 @@
+<view class="page">
+  <view class="search">
+    <input class="search-input" placeholder="搜索非遗课程" value="{{keyword}}" bindinput="onSearch"/>
+  </view>
+  <scroll-view scroll-x class="cat-bar" enhanced show-scrollbar="{{false}}">
+    <view class="cat-tab {{activeCat===0?'active':''}}" bindtap="setCat" data-id="0">全部</view>
+    <view class="cat-tab {{activeCat===item.id?'active':''}}" wx:for="{{categories}}" wx:key="id" bindtap="setCat" data-id="{{item.id}}">{{item.name}}</view>
+  </scroll-view>
+  <view class="list">
+    <view class="card" wx:for="{{list}}" wx:key="id" bindtap="goDetail" data-id="{{item.id}}">
+      <view class="cover"><cover text="{{item.title}}" seed="{{item.id}}" src="{{item.cover}}"></cover></view>
+      <view class="info">
+        <text class="title ellipsis-1">{{item.title}}</text>
+        <text class="teacher">主讲：{{item.teacher}}</text>
+        <text class="intro ellipsis-1">{{item.intro}}</text>
+        <view class="bottom between">
+          <view class="price-box">
+            <text class="price" wx:if="{{item.price>0}}">¥{{item.price}}</text>
+            <text class="price free" wx:else>免费</text>
+            <text class="origin" wx:if="{{item.originalPrice>0}}">¥{{item.originalPrice}}</text>
+          </view>
+          <text class="students">{{item.students}}人在学</text>
+        </view>
+      </view>
+    </view>
+    <view class="empty" wx:if="{{!list.length}}">暂无课程</view>
+  </view>
+</view>

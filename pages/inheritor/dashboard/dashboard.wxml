@@ -1,0 +1,43 @@
+<view class="page">
+  <view class="header">
+    <view class="row">
+      <image class="avatar" wx:if="{{user.avatar}}" src="{{user.avatar}}" mode="aspectFill"></image>
+      <view class="avatar" wx:else>{{user.nickname[0]}}</view>
+      <view class="flex1">
+        <text class="name">{{user.nickname}}</text>
+        <text class="role">传承人工作台</text>
+      </view>
+    </view>
+    <view class="stats">
+      <view class="stat"><text class="num">{{heritageCount}}</text><text class="lbl">非遗内容</text></view>
+      <view class="stat"><text class="num">{{productCount}}</text><text class="lbl">文创商品</text></view>
+      <view class="stat"><text class="num">{{activityCount}}</text><text class="lbl">非遗活动</text></view>
+      <view class="stat"><text class="num">{{courseCount}}</text><text class="lbl">课程</text></view>
+    </view>
+  </view>
+
+  <view class="grid">
+    <view class="g-item" bindtap="go" data-url="/pages/inheritor/info/info">
+      <text class="g-icon">👤</text><text>传承人资料</text>
+    </view>
+    <view class="g-item" bindtap="go" data-url="/pages/inheritor/shop/shop">
+      <text class="g-icon">🏪</text><text>店铺管理</text>
+    </view>
+    <view class="g-item" bindtap="go" data-url="/pages/inheritor/product/product">
+      <text class="g-icon">🎁</text><text>文创商品</text>
+    </view>
+    <view class="g-item" bindtap="go" data-url="/pages/inheritor/orders/orders">
+      <text class="g-icon">📦</text><text>商家订单</text>
+    </view>
+    <view class="g-item" bindtap="go" data-url="/pages/inheritor/activities/activities">
+      <text class="g-icon">🎉</text><text>非遗活动</text>
+    </view>
+    <view class="g-item" bindtap="go" data-url="/pages/inheritor/courses/courses">
+      <text class="g-icon">📚</text><text>非遗课程</text>
+    </view>
+  </view>
+
+  <view class="card" bindtap="backHome">
+    <text class="back">← 返回首页</text>
+  </view>
+</view>

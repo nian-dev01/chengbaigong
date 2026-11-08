@@ -1,0 +1,18 @@
+<view class="container">
+  <view class="tip card">提交传承人申请后，管理员审核通过即可解锁传承人专属功能（内容维护、店铺管理、活动发布等）。</view>
+  <view class="form">
+    <view class="form-item"><text class="label">真实姓名</text><input class="val" value="{{form.realName}}" bindinput="onInput" data-field="realName" placeholder="请输入真实姓名"/></view>
+    <view class="form-item"><text class="label">身份证号</text><input class="val" value="{{form.idCard}}" bindinput="onInput" data-field="idCard" placeholder="请输入身份证号"/></view>
+    <view class="form-item"><text class="label">非遗类别</text><input class="val" value="{{form.category}}" bindinput="onInput" data-field="category" placeholder="如：苏绣、剪纸"/></view>
+    <view class="form-item col"><text class="label">个人简介</text><textarea class="textarea" value="{{form.intro}}" bindinput="onInput" data-field="intro" placeholder="介绍您的传承经历与技艺..." maxlength="500"/></view>
+    <view class="form-item col">
+      <text class="label">证明材料</text>
+      <view class="upload" bindtap="upload">
+        <text class="up-icon">📷</text>
+        <text>点击上传证明材料（模拟）</text>
+      </view>
+      <text class="file-name" wx:if="{{form.materials}}">{{form.materials}}</text>
+    </view>
+  </view>
+  <view class="btn-primary" bindtap="submit">提交申请</view>
+</view>

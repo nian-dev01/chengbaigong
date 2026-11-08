@@ -1,0 +1,36 @@
+<view class="page">
+  <view class="tabs">
+    <text class="tab {{status==='all'?'active':''}}" bindtap="setStatus" data-v="all">全部</text>
+    <text class="tab {{status==='pending'?'active':''}}" bindtap="setStatus" data-v="pending">待付款</text>
+    <text class="tab {{status==='paid'?'active':''}}" bindtap="setStatus" data-v="paid">待发货</text>
+    <text class="tab {{status==='shipped'?'active':''}}" bindtap="setStatus" data-v="shipped">待收货</text>
+    <text class="tab {{status==='completed'?'active':''}}" bindtap="setStatus" data-v="completed">已完成</text>
+  </view>
+  <view class="list">
+    <view class="order-card" wx:for="{{list}}" wx:key="id" bindtap="goDetail" data-id="{{item.id}}">
+      <view class="o-head between">
+        <text class="o-no">订单号：{{item.orderNo}}</text>
+        <text class="o-status {{statusClass(item.status)}}">{{statusText(item.status)}}</text>
+      </view>
+      <view class="o-goods">
+        <view class="g-item" wx:for="{{item.items}}" wx:for-item="g" wx:key="productId">
+          <view class="g-cover"><cover text="{{g.name}}" seed="{{g.productId}}" src="{{g.cover}}"></cover></view>
+          <view class="g-info flex1">
+            <text class="g-name ellipsis-1">{{g.name}}</text>
+            <text class="g-price">¥{{g.price}} x{{g.count}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="o-foot between">
+        <text class="o-total">合计：<text class="price">¥{{item.total}}</text></text>
+        <view class="o-actions" catchtap="">
+          <text class="o-btn outline" wx:if="{{item.status==='pending'}}" catchtap="pay" data-id="{{item.id}}">去支付</text>
+          <text class="o-btn outline" wx:if="{{item.status==='pending'}}" catchtap="cancel" data-id="{{item.id}}">取消</text>
+          <text class="o-btn" wx:if="{{item.status==='shipped'}}" catchtap="confirm" data-id="{{item.id}}">确认收货</text>
+          <text class="o-btn outline" wx:if="{{item.status==='completed'}}" catchtap="refund" data-id="{{item.id}}">退款</text>
+        </view>
+      </view>
+    </view>
+    <view class="empty" wx:if="{{!list.length}}">暂无订单</view>
+  </view>
+</view>

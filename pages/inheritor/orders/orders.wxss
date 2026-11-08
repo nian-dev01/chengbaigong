@@ -1,0 +1,10 @@
+.page { padding: 20rpx 24rpx; }
+.order { background: #fff; border-radius: 16rpx; padding: 24rpx; margin-bottom: 20rpx; }
+.o-head { margin-bottom: 12rpx; }
+.no { font-size: 22rpx; color: #999; }
+.status { font-size: 26rpx; color: var(--c-primary-dark); font-weight: bold; }
+.goods { border-top: 1rpx solid #f5f5f5; padding-top: 12rpx; }
+.g { font-size: 26rpx; color: #666; display: block; padding: 4rpx 0; }
+.o-foot { margin-top: 12rpx; padding-top: 12rpx; border-top: 1rpx solid #f5f5f5; }
+.total { font-size: 26rpx; }
+.ship { font-size: 24rpx; color: #fff; background: var(--c-primary-dark); padding: 8rpx 24rpx; border-radius: 20rpx; }

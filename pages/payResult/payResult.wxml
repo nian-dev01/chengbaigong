@@ -1,0 +1,17 @@
+<view class="page">
+  <view class="result-box">
+    <view class="result-icon">💰</view>
+    <view class="result-title">订单待支付</view>
+    <view class="amount">¥{{order.total}}</view>
+    <view class="pay-methods">
+      <view class="method {{method==='wechat'?'active':''}}" bindtap="selectMethod" data-v="wechat">
+        <text class="m-icon">💚</text><text>微信支付</text>
+      </view>
+      <view class="method {{method==='alipay'?'active':''}}" bindtap="selectMethod" data-v="alipay">
+        <text class="m-icon">💙</text><text>支付宝</text>
+      </view>
+    </view>
+    <view class="btn-primary mt-40" bindtap="doPay">确认支付</view>
+    <view class="btn-gray mt-20" bindtap="skip">暂不支付</view>
+  </view>
+</view>

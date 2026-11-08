@@ -1,0 +1,80 @@
+<view class="page">
+  <!-- 标题区 -->
+  <view class="title-bar">
+    <view class="title-cn">华夏非遗地图</view>
+    <view class="title-sub">千年文脉 · 星火相传</view>
+    <view class="seal">非遗</view>
+  </view>
+
+  <!-- 公鸡地图 -->
+  <view class="map-wrap">
+    <image class="china-map" src="/images/china-map.png" mode="widthFix"></image>
+    
+    <!-- 省份热区（带非遗的省份） -->
+    <view class="hotspot" wx:for="{{spots}}" wx:key="province" 
+          style="left:{{item.x}}%;top:{{item.y}}%;"
+          bindtap="onSpot" data-prov="{{item.province}}">
+      <view class="dot {{item.count>0?'dot-active':'dot-empty'}}"></view>
+      <text class="spot-label">{{item.province}}</text>
+      <text class="spot-count" wx:if="{{item.count>0}}">{{item.count}}</text>
+    </view>
+  </view>
+
+  <!-- 统计栏 -->
+  <view class="stats-bar">
+    <view class="stat-item">
+      <text class="stat-num">{{total}}</text>
+      <text class="stat-lbl">项非遗</text>
+    </view>
+    <view class="stat-divider"></view>
+    <view class="stat-item">
+      <text class="stat-num">{{worldwide}}</text>
+      <text class="stat-lbl">世界级</text>
+    </view>
+    <view class="stat-divider"></view>
+    <view class="stat-item">
+      <text class="stat-num">{{provinces}}</text>
+      <text class="stat-lbl">省份</text>
+    </view>
+  </view>
+
+  <!-- 省份列表 -->
+  <view class="province-section">
+    <view class="p-section-title">
+      <text class="p-title-cn">按省份浏览</text>
+      <text class="p-title-en">BROWSE BY PROVINCE</text>
+    </view>
+
+    <view class="province-grid">
+      <view class="province-tile" wx:for="{{groups}}" wx:key="province" bindtap="showProv" data-prov="{{item.province}}">
+        <text class="tile-name">{{item.province}}</text>
+        <text class="tile-count">{{item.list.length}}项</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部说明 -->
+  <view class="footer-note">地图数据来源：阿里云 DataV GeoAtlas</view>
+</view>
+
+<!-- 省份弹窗 -->
+<view class="prov-popup" wx:if="{{popup.show}}" bindtap="closePop">
+  <view class="pop-card" catchtap="stop">
+    <view class="pop-head">
+      <text class="pop-title">{{popup.prov}} · 非遗</text>
+      <text class="pop-close" bindtap="closePop">×</text>
+    </view>
+    <scroll-view scroll-y class="pop-list">
+      <view class="pop-item" wx:for="{{popup.list}}" wx:key="id" bindtap="goDetail" data-id="{{item.id}}">
+        <cover class="pop-cover" text="{{item.name}}" seed="{{item.id}}" src="{{item.cover}}"></cover>
+        <view class="pop-info flex1">
+          <text class="pop-name">{{item.name}}</text>
+          <view class="pop-tags">
+            <text class="pop-level {{item.level==='世界级'?'tag-gold':'tag-red'}}">{{item.level}}</text>
+          </view>
+          <text class="pop-intro ellipsis-2">{{item.intro}}</text>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

@@ -1,0 +1,108 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/login/login",
+    "pages/register/register",
+    "pages/profile/profile",
+    "pages/editProfile/editProfile",
+    "pages/forgetPwd/forgetPwd",
+    "pages/heritageList/heritageList",
+    "pages/heritageDetail/heritageDetail",
+    "pages/videoList/videoList",
+    "pages/videoDetail/videoDetail",
+    "pages/activityList/activityList",
+    "pages/activityDetail/activityDetail",
+    "pages/activitySignin/activitySignin",
+    "pages/courseList/courseList",
+    "pages/courseDetail/courseDetail",
+    "pages/courseLearn/courseLearn",
+    "pages/shopList/shopList",
+    "pages/shopDetail/shopDetail",
+    "pages/productDetail/productDetail",
+    "pages/cart/cart",
+    "pages/addressList/addressList",
+    "pages/addressEdit/addressEdit",
+    "pages/orderList/orderList",
+    "pages/orderDetail/orderDetail",
+    "pages/orderCreate/orderCreate",
+    "pages/payResult/payResult",
+    "pages/refund/refund",
+    "pages/topicList/topicList",
+    "pages/topicDetail/topicDetail",
+    "pages/topicPublish/topicPublish",
+    "pages/consult/consult",
+    "pages/announcement/announcement",
+    "pages/applyInheritor/applyInheritor",
+    "pages/favorites/favorites",
+    "pages/myPublish/myPublish",
+    "pages/message/message",
+    "pages/inheritor/dashboard/dashboard",
+    "pages/inheritor/info/info",
+    "pages/inheritor/shop/shop",
+    "pages/inheritor/product/product",
+    "pages/inheritor/productEdit/productEdit",
+    "pages/inheritor/orders/orders",
+    "pages/inheritor/activities/activities",
+    "pages/inheritor/courses/courses",
+    "pages/admin/dashboard/dashboard",
+    "pages/admin/users/users",
+    "pages/admin/applyReview/applyReview",
+    "pages/admin/heritage/heritage",
+    "pages/admin/videos/videos",
+    "pages/admin/activities/activities",
+    "pages/admin/activitySignin/activitySignin",
+    "pages/admin/courses/courses",
+    "pages/admin/topics/topics",
+    "pages/admin/announcements/announcements",
+    "pages/admin/statistics/statistics",
+    "pages/heritageMap/heritageMap"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#F8F3E7",
+    "navigationBarTitleText": "非遗传承",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#F8F3E7"
+  },
+  "tabBar": {
+    "color": "#87A398",
+    "selectedColor": "#3E5F55",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/tab/home.png",
+        "selectedIconPath": "images/tab/home_on.png"
+      },
+      {
+        "pagePath": "pages/shopList/shopList",
+        "text": "商城",
+        "iconPath": "images/tab/shop.png",
+        "selectedIconPath": "images/tab/shop_on.png"
+      },
+      {
+        "pagePath": "pages/consult/consult",
+        "text": "小智",
+        "iconPath": "images/tab/ai.png",
+        "selectedIconPath": "images/tab/ai_on.png"
+      },
+      {
+        "pagePath": "pages/topicList/topicList",
+        "text": "论坛",
+        "iconPath": "images/tab/topic.png",
+        "selectedIconPath": "images/tab/topic_on.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "images/tab/mine.png",
+        "selectedIconPath": "images/tab/mine_on.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

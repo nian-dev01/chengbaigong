@@ -1,0 +1,4 @@
+{
+  "navigationBarTitleText": "非遗课程",
+  "usingComponents": { "cover": "/components/cover/cover" }
+}
