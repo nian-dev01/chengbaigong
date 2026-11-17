@@ -114,6 +114,10 @@
   align-items: center;
   font-size: 20rpx;
   color: var(--c-text-soft);
+  transition: transform 0.15s ease;
+}
+.action:active {
+  transform: scale(0.92);
 }
 .a-icon {
   font-size: 36rpx;
@@ -126,15 +130,19 @@
   text-align: center;
   border-radius: 40rpx;
   font-size: 28rpx;
-  transition: all 0.2s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.btn-cart:active,
+.btn-buy:active {
+  transform: scale(0.96);
 }
 .btn-cart {
-  background: var(--grad-warm);
+  background: var(--grad-warm-deep);
   color: #fff;
-  box-shadow: 0 4rpx 20rpx rgba(240, 207, 193, 0.3);
+  box-shadow: 0 4rpx 16rpx rgba(189, 109, 136, 0.28);
 }
 .btn-buy {
-  background: var(--grad-primary);
+  background: var(--grad-primary-deep);
   color: #fff;
-  box-shadow: var(--shadow-soft);
+  box-shadow: 0 4rpx 16rpx rgba(63, 114, 99, 0.28);
 }
