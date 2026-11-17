@@ -189,6 +189,27 @@ page {
   border: none;
 }
 
+.btn-outline {
+  background: #fff;
+  color: var(--c-primary-dark);
+  border: 2rpx solid var(--c-primary-light);
+  border-radius: 40rpx;
+  font-size: 28rpx;
+  height: 88rpx;
+  line-height: 84rpx;
+  text-align: center;
+  letter-spacing: 4rpx;
+  box-sizing: border-box;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.btn-outline:active {
+  transform: scale(0.96);
+  background: var(--c-fresh);
+}
+.btn-outline::after {
+  border: none;
+}
+
 .btn-ghost {
   background: transparent;
   color: var(--c-primary-dark);
