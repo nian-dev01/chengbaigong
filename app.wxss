@@ -33,7 +33,9 @@ page {
 
   /* === 渐变 === */
   --grad-primary: linear-gradient(135deg, #b8dccf 0%, #91cbb8 100%);
+  --grad-primary-deep: linear-gradient(135deg, #5fa693 0%, #3f7263 100%);
   --grad-warm: linear-gradient(135deg, #f0cfc1 0%, #e8c7d1 100%);
+  --grad-warm-deep: linear-gradient(135deg, #d09077 0%, #bd6d88 100%);
   --grad-bg: linear-gradient(180deg, #faf6ec 0%, #f5f3e8 45%, #eaf5eb 100%);
   --grad-card: linear-gradient(145deg, #ffffff 0%, #f8f3e7 100%);
 
@@ -148,7 +150,7 @@ page {
 
 /* === 按钮 === */
 .btn-primary {
-  background: var(--grad-primary);
+  background: var(--grad-primary-deep);
   color: #fff;
   border-radius: 40rpx;
   font-size: 28rpx;
@@ -156,15 +158,19 @@ page {
   line-height: 88rpx;
   text-align: center;
   letter-spacing: 4rpx;
-  box-shadow: var(--shadow-soft);
-  transition: all 0.25s ease;
+  box-shadow: 0 4rpx 16rpx rgba(63, 114, 99, 0.28);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.btn-primary:active {
+  transform: scale(0.96);
+  box-shadow: 0 2rpx 8rpx rgba(63, 114, 99, 0.22);
 }
 .btn-primary::after {
   border: none;
 }
 
 .btn-warm {
-  background: var(--grad-warm);
+  background: var(--grad-warm-deep);
   color: #fff;
   border-radius: 40rpx;
   font-size: 28rpx;
@@ -172,7 +178,12 @@ page {
   line-height: 88rpx;
   text-align: center;
   letter-spacing: 4rpx;
-  box-shadow: 0 4rpx 20rpx rgba(240, 207, 193, 0.3);
+  box-shadow: 0 4rpx 16rpx rgba(189, 109, 136, 0.28);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.btn-warm:active {
+  transform: scale(0.96);
+  box-shadow: 0 2rpx 8rpx rgba(189, 109, 136, 0.22);
 }
 .btn-warm::after {
   border: none;
